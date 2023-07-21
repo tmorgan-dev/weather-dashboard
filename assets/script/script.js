@@ -12,7 +12,14 @@ var apiKey = "428568c242a23aec5b8d74156afd47b7"
 var city;
 var queryUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey;
 
+var searchButton = document.querySelector("#search")
+var searchEl = document.querySelector("#searchfield")
+
+searchButton.addEventListener("click", search)
+    
 function search(){
+    city = searchEl.value.trim()
+    console.log(city)   
     fetch (
         queryUrl
     ) .then(function(response){
@@ -21,4 +28,3 @@ function search(){
         console.log(data)
     })
 }
-search()
