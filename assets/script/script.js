@@ -68,6 +68,7 @@ function search(city) {
                 })
         })
     history()
+    clearText()
 }
 
 function history() {
@@ -98,3 +99,8 @@ function createbuttons(storage) {
 
 
 searchButton.addEventListener("click", ()=>{search(searchEl.value.trim())})
+
+function clearText() {
+   var input1 = document.getElementById('searchfield');
+   input1.value = "";
+}
