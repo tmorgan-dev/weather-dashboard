@@ -13,7 +13,7 @@ header {
     flex-direction: column;
     align-items: start;
     justify-content: space-between;
-    font-size: 32px;
+    font-size: 24px;
     padding: 10px;
     gap: 5px;
     
@@ -60,15 +60,26 @@ header {
 }
 
 #historysection {
-        background-color: lightblue;
-}
-
-.searched-city {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     padding: 1rem;
     gap: 1rem;
     flex-wrap: wrap;
+}
+
+.searched-city {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border-radius: 3px;
+    box-shadow: 0 2px 5px 1px rgba(128, 128, 128, 0.3);
+    padding: 1rem;
+}
+
+.searched-city:hover {
+   cursor: pointer;
+   border: 4px yellow solid;
+   padding: 10px;
 }
