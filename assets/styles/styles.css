@@ -1,3 +1,24 @@
+header {
+    font-size: 54px;    
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: green;
+    color: white;
+}
+
+#searchstyle {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    font-size: 32px;
+    padding: 10px;
+    gap: 5px;
+    
+}
+
 #resultsection {
     display: flex;
     flex-direction: row;
@@ -15,6 +36,8 @@
     border-radius: 3px;
     box-shadow: 0 2px 5px 1px rgba(128, 128, 128, 0.3);
     padding: 1rem;
+    background-color: blue;
+    color: white;
 }
 
 #fivedaysection {
@@ -34,4 +57,18 @@
     border-radius: 3px;
     box-shadow: 0 2px 5px 1px rgba(128, 128, 128, 0.3);
     padding: 1rem;
+}
+
+#historysection {
+        background-color: lightblue;
+}
+
+.searched-city {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    gap: 1rem;
+    flex-wrap: wrap;
 }

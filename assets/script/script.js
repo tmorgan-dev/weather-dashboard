@@ -1,10 +1,8 @@
 var apiKey = "428568c242a23aec5b8d74156afd47b7"
 var queryUrl = "https://api.openweathermap.org/data/2.5/weather?"
 
-
 var searchButton = document.querySelector("#search")
 var searchEl = document.querySelector("#searchfield")
-
 
 function search(city) {
     var queryUrl2 = queryUrl + "q=" + city + "&appid=" + apiKey + "&units=imperial"
@@ -73,17 +71,19 @@ function search(city) {
 
 function history() {
     var historyValue = searchEl.value.trim()
-    var storage = JSON.parse(localStorage.getItem("storage")) || []
-    storage.push(historyValue)
-    localStorage.setItem("storage", JSON.stringify(storage))
-    createbuttons(storage)
+    if (historyValue !== "") {
+        var storage = JSON.parse(localStorage.getItem("storage")) || []
+        storage.push(historyValue)
+        localStorage.setItem("storage", JSON.stringify(storage))
+        createbuttons(storage)
+    }
 }
 
 function createbuttons(storage) {
     var historySection = document.querySelector('#historysection')
     historySection.innerHTML = ""
     storage.forEach(function (city) {
-        var cityList = document.createElement("li")
+        var cityList = document.createElement("p")
         cityList.textContent = city
         cityList.className += "searched-city"
         historySection.appendChild(cityList)
@@ -91,7 +91,6 @@ function createbuttons(storage) {
         cityList.addEventListener("click", function (event) {
             event.preventDefault()
             var oldCitySearch = cityList.textContent
-            console.log(cityList)
             search(oldCitySearch)
         })
     })
